@@ -24,7 +24,7 @@ with sr.Microphone() as source:
             robo.setProperty('voice', b'brasil')
             robo.say("Ok, abrindo mídia")
             robo.runAndWait()
-            os.system("caminho da musica")
+            os.system(r"D:\akon-sryBlameItOnMe.mp3")
         elif resposta == "não":
             robo.setProperty('rate', 180)
             robo.setProperty('volume', 1)
