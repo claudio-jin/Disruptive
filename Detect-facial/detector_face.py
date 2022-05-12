@@ -1,7 +1,7 @@
 import cv2
 classificadorFace = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
 
-imagem = cv2.imread(r'images\rosto1.jpg')
+imagem = cv2.imread(r'../images/rosto1.jpg')
 
 # converter os pixel da imagem de rgb para preto e branco
 cinza = cv2.cvtColor(imagem, cv2.COLOR_BGR2GRAY)
