@@ -1,6 +1,7 @@
 import pyttsx3
 import speech_recognition as sr
 import os
+from datetime import datetime
 
 recon = sr.Recognizer()
 comando = ""
@@ -26,7 +27,7 @@ def sexta_feira_escuta():
 
 sextaFeira = pyttsx3.init()
 sextaFeira.setProperty('voice', b'brasil')
-sextaFeira.setProperty('rate', 240)
+sextaFeira.setProperty('rate', 250)
 sextaFeira.setProperty('volume', 1)
 while True:
     # sextaFeira.say("Diga alguma coisa: ")
@@ -79,7 +80,47 @@ while True:
                 sextaFeira.runAndWait()
                 os.system(r"D:\akon-sryBlameItOnMe.mp3")
                 break
-            break
 
+
+            #Perguntando a data atual
+            if resp == "que dia é hoje?" or resp == "que dia é hoje":
+                meses = {1: "Janeiro", 2: "fevereiro", 3: "Março", 4: "Abril", 5: "Maio", 6: "Junho", 7: "Julho",
+                         8: "Agosto", 9: "Setembro", 10: "Outubro", 11: "Novembro", 12: "Dezembro"}
+
+                dia = datetime.today().day
+
+                if datetime.today().month in meses.keys():
+                    mes = meses.get(datetime.today().month)
+
+                ano = datetime.today().year
+
+                texto = "hoje é dia " + str(dia) + " do mês de " + str(mes) + " do ano " + str(ano)
+
+                sextaFeira.say(texto)
+                sextaFeira.runAndWait()
+
+            #perguntando que horas sao
+            if resp == "que horas são":
+                agora = datetime.now()
+                hora = agora.hour
+                minuto = agora.minute
+
+                texto = "Agora são " + str(hora) + " horas e " + str(minuto) + " minutos"
+
+                sextaFeira.say(texto)
+                sextaFeira.runAndWait()
+
+            if resp == "abra a calculadora":
+                sextaFeira.say("A calculadora está aberta, quais números deseja calcular?")
+                frase = sexta_feira_escuta()
+                calcular = frase.split()
+                if calcular[1] == 'x':
+                    print(int(calcular[0]) * int(calcular[2]))
+                elif calcular[1] == '+':
+                    print(int(calcular[0]) + int(calcular[2]))
+                elif calcular[1] == '-':
+                    print(int(calcular[0]) - int(calcular[2]))
+                else:
+                    print(int(calcular[0]) / int(calcular[2]))
     else:
         print("nao entendi o que voce disse(else)")
