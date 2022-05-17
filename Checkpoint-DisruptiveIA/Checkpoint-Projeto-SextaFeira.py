@@ -70,9 +70,9 @@ while True:
                     sextaFeira.say("Evento cadastrado com sucesso! O senhor deseja mais alguma coisa?")
                     sextaFeira.runAndWait()
 
-                    resp = sexta_feira_escuta()
+                    resp2 = sexta_feira_escuta()
 
-                    if resp == "ler agenda" or resp == "leia agenda":
+                    if resp2 == "ler agenda" or resp2 == "leia agenda":
                         with open("./agenda.txt", 'r', encoding="utf-8") as agendaCadastrada:
                             fala = ",".join(agendaCadastrada.readlines())
                             print(fala)
@@ -140,15 +140,19 @@ while True:
                 calcular = frase.split()
                 if calcular[1] == 'x':
                     result = int(calcular[0]) * int(calcular[2])
+                    sextaFeira.say(result)
                     sextaFeira.runAndWait()
                 elif calcular[1] == '+':
                     result = int(calcular[0]) + int(calcular[2])
+                    sextaFeira.say(result)
                     sextaFeira.runAndWait()
                 elif calcular[1] == '-':
                     result = int(calcular[0]) - int(calcular[2])
+                    sextaFeira.say(result)
                     sextaFeira.runAndWait()
                 else:
                     result = int(calcular[0]) / int(calcular[2])
+                    sextaFeira.say(result)
                     sextaFeira.runAndWait()
 
             # consultar o clima
