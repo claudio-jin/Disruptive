@@ -84,6 +84,7 @@ while True:
                         print(resp)
                         sextaFeira.say("Ok mestre tenha um bom dia!")
                         sextaFeira.runAndWait()
+                        break
 
                     else:
                         sextaFeira.say("O comando cadastrar evento encerrou")
@@ -96,6 +97,7 @@ while True:
                     print(fala)
                     sextaFeira.say(fala)
                     sextaFeira.runAndWait()
+                    break
 
             # toque uma musica
             if resp == "toque uma musica" or resp == "toque uma música":
