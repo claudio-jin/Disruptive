@@ -22,12 +22,10 @@ while True:
             print(confianca)
             if nome == 1:
                 nome = 'Claudio'
-            cv2.putText(imagem, str(nome), (x, y + altura + 30), font, 2, (0, 0, 255))
-
-
+            cv2.putText(imagem, str(nome), (x, y + altura + 50), font, 2, (0, 0, 255))
 
     except:
-        print("fudeu")
+        print("bug")
     cv2.imshow("face", imagem)
     if cv2.waitKey(1) == ord('q'):
         break

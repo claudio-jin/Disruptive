@@ -1,5 +1,5 @@
-import time
+caminho = ['images/claudio_1.jpg']
 
-for i in range(10):
-    print(i)
-    time.sleep(3)
+test = caminho.join('images')
+
+print(test)
